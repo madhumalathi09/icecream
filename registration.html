@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+ 
+<style>
+body {
+  background-image: url('milkshake4.jpg');
+  background-repeat: no-repeat;
+   background-attachment: fixed;  
+  background-size: cover;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color:lightblue;
+}
+
+#registrationForm {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: 300px;
+  text-align: left;
+}
+
+input[type=text], select, input[type=radio] + label, input[type=checkbox] + label {
+  margin-bottom: 10px;
+  display: block;
+  width: 100%;
+}
+
+input[type=radio], input[type=checkbox] {
+  margin-right: 5px;
+}
+
+button {
+  background-color: blue;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-group {
+  margin-bottom: 15px;
+ 
+}
+.form-group label {
+  display: block;
+}
+
+</style>
+</head>
+<body>
+
+<form id="registrationForm">
+<div class="form-group">
+
+            Name: <input type="text" id="name">
+	    Address:<input type ="text" id="address">
+            Flavour:
+            <select id="flavour">
+                <option value="">Select flavour</option>
+                <option value="cotton">cotton candy</option>
+                <option value="banana">banana fudge swirl</option>
+                <option value="vanilla">vanilla</option>
+                <option value="tiger">tiger tail</option>
+            </select>
+             
+            model:
+            <select id="model">
+                <option value="">Select model</option>
+                <option value="cup">cup</option>
+                <option value="design">design</option>
+                <option value="cone">cone</option>
+                
+            </select>
+       
+                          
+            Agree to terms:
+            <input type="checkbox" id="agree"><label for="agree">Yes, I agree.</label>
+</div>
+        <button type="button" onclick="validateRegistration()">Register</button>
+</form>
+
+    <script>
+        function validateRegistration() {
+            // Fetch values from form elements
+            var name = document.getElementById("name").value;
+            var address = document.getElementById("address").value;
+            var modelIndex = document.getElementById("model").selectedIndex;
+	    var FlavourIndex = document.getElementById("flavour").selectedIndex;
+	    var agreeChecked = document.getElementById("agree").checked;
+
+            if (name === "") {
+                alert("Please enter your name.");
+                return;
+            }
+            if (address === ""){
+              alert("Please enter your address.");
+                return;
+            }
+            if (modelIndex === 0) {
+                alert("Please select yourmodel.");
+                return;
+            }
+            if (flavourIndex === 0) {
+                alert("Please select your flavour.");
+                return;
+            }
+                         }
+
+              if (!agreeChecked) {
+                alert("Please agree to the terms.");
+                return;
+            }
+
+            alert("Registration process is successful!");
+        }
+    </script>
+
+</body>
+</html>
